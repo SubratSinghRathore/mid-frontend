@@ -35,7 +35,7 @@
 
       <div class="profile">
          <img src="https://img.freepik.com/premium-vector/student-girl-illustration-cartoon-icon_592929-13.jpg" class="image" alt="">
-         <h3 class="name">Anu Priya</h3>
+         <h3 class="name" id="i">user</h3>
          <p class="role">student</p>
          <a href="profile.html" class="btn">view profile</a>
          <div class="flex-btn">
@@ -56,7 +56,7 @@
 
    <div class="profile">
       <img src="https://img.freepik.com/premium-vector/student-girl-illustration-cartoon-icon_592929-13.jpg" class="image" alt="">
-      <h3 class="name">Anu Priya</h3>
+      <h3 class="name" id="i-1">user</h3>
       <p class="role">student</p>
       <a href="profile.html" class="btn">view profile</a>
    </div>
@@ -201,7 +201,19 @@
 
 
 
-
+<script>
+      
+   (function () {
+      var user = localStorage.getItem('username');
+      console.log(user);
+   
+      
+      const i = document.getElementById("i").innerHTML = user;
+      const i_1 = document.getElementById("i-1").innerHTML = user;
+   
+   
+   })();
+      </script>
 
 
 <footer class="footer">

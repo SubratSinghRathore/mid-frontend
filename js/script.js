@@ -29,10 +29,10 @@ toggleBtn.onclick = (e) =>{
 
 let profile = document.querySelector('.header .flex .profile');
 
-// document.querySelector('#user-btn').onclick = () =>{
-//    profile.classList.toggle('active');
-//    search.classList.remove('active');
-// }
+document.querySelector('#user-btn').onclick = () =>{
+   profile.classList.toggle('active');
+   search.classList.remove('active');
+}
 
 let search = document.querySelector('.header .flex .search-form');
 
@@ -102,22 +102,14 @@ async function login() {
        headers: { 'Content-type': 'application/json' }
    })
        .then(res => {
+         if(res.ok) {
+            document.getElementById("login_div").classList.remove("hide");
+         }
+       })
+       .then(res => {
            return res.json();
        })
        .then(res => {
            localStorage.setItem('username', res.username)
        })
 }
-
-
-
-   (function () {
-      var user = localStorage.getItem('username');
-      console.log(user);
-
-      
-
-
-   })();
-   const username_local = document.getElementById("user")
-   username_local.textContent = "Aman";

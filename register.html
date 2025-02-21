@@ -46,7 +46,7 @@
 
       <div class="profile">
          <img src="https://img.freepik.com/premium-vector/student-girl-illustration-cartoon-icon_592929-13.jpg" class="image" alt="">
-         <h3 class="name">Anu Priya</h3>
+         <h3 class="name" id="i">user</h3>
          <p class="role">student</p>
          <a href="profile.html" class="btn">view profile</a>
          <div class="flex-btn">
@@ -73,11 +73,11 @@
    </div>
 
    <nav class="navbar">
-      <a href="login.html"><i class="fas fa-home"></i><span>home</span></a>
-      <a href="login.html"><i class="fas fa-question"></i><span>about</span></a>
-      <a href="login.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
-      <a href="login.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
-      <a href="login.html"><i class="fas fa-headset"></i><span>contact us</span></a>
+      <a href="index.html"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>about</span></a>
+      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
       
    </nav>
 
@@ -111,7 +111,18 @@
 
 
 
-
+<script>
+      
+   (function () {
+      var user = localStorage.getItem('username');
+      console.log(user);
+   
+      
+      const i = document.getElementById("i").innerHTML = user;
+   
+   
+   })();
+      </script>
 
 
 <footer class="footer">
