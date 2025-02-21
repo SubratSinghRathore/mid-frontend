@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Games</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background-color: #0c0ca0;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      width: 100%;
+    }
+    main {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .game-container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      text-align: center;
+    }
+    h2 {
+      color: #000000;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .game-content {
+      margin-top: 15px;
+    }
+    .question {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+    .options li {
+      margin: 5px 0;
+    }
+    .quiz-result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Educational Games</h1>
+  </header>
+
+  <main>
+
+    <div class="game-container">
+        <h2>Quiz Cracker</h2>
+        <div class="game-content">
+          <div id="math-question" class="question"></div>
+          <button><a href="https://www.educaplay.com/game/22537819-quiz_cracker.html">Start Game</a></button>
+          <div id="math-result" class="quiz-result"></div>
+        </div>
+      </div>
+
+      <div class="game-container">
+        <h2>Word Search</h2>
+        <div class="game-content">
+          <div id="math-question" class="question"></div>
+          <button><a href="https://www.educaplay.com/learning-resources/22538846-find_the_words.html">Start Game</a></button>
+          <div id="math-result" class="quiz-result"></div>
+        </div>
+      </div>
+
+      <div class="game-container">
+        <h2>Unscrambled words</h2>
+        <div class="game-content">
+          <div id="math-question" class="question"></div>
+          <button><a href="https://www.educaplay.com/learning-resources/22538911-unscramble_letters.html">Start Game</a></button>
+          <div id="math-result" class="quiz-result"></div>
+        </div>
+      </div>
+
+    <div class="game-container">
+      <h2>Math Quiz</h2>
+      <div class="game-content">
+        <div id="math-question" class="question"></div>
+        <button onclick="generateMathQuestion()">Start Game</button>
+        <div id="math-result" class="quiz-result"></div>
+      </div>
+    </div>
+
+    
+
+    <div class="game-container">
+      <h2>Trivia Quiz</h2>
+      <div class="game-content">
+        <div id="trivia-question" class="question"></div>
+        <ul id="trivia-options" class="options"></ul>
+        <button onclick="startTrivia()">Start Game</button>
+        <div id="trivia-result" class="quiz-result"></div>
+      </div>
+    </div>
+
+    
+
+  <script>
+    // Math Quiz
+    function generateMathQuestion() {
+      const num1 = Math.floor(Math.random() * 10) + 1;
+      const num2 = Math.floor(Math.random() * 10) + 1;
+      const question = `${num1} + ${num2} = ?`;
+      const answer = num1 + num2;
+      
+      const userAnswer = prompt(question);
+      const result = document.getElementById('math-result');
+      if (parseInt(userAnswer) === answer) {
+        result.textContent = 'Correct!';
+        result.style.color = 'green';
+      } else {
+        result.textContent = 'Try Again!';
+        result.style.color = 'red';
+      }
+    }
+
+    // Trivia Quiz
+    const triviaQuestions = [
+      {
+        question: 'What is the capital of France?',
+        options: ['Berlin', 'Madrid', 'Paris', 'Rome'],
+        answer: 'Paris',
+      },
+      {
+        question: 'Which planet is known as the Red Planet?',
+        options: ['Earth', 'Mars', 'Jupiter', 'Venus'],
+        answer: 'Mars',
+      },
+      {
+        question: 'What is the largest ocean on Earth?',
+        options: ['Atlantic', 'Indian', 'Arctic', 'Pacific'],
+        answer: 'Pacific',
+      },
+    ];
+
+    function startTrivia() {
+      const randomIndex = Math.floor(Math.random() * triviaQuestions.length);
+      const trivia = triviaQuestions[randomIndex];
+      const questionElem = document.getElementById('trivia-question');
+      const optionsElem = document.getElementById('trivia-options');
+      const resultElem = document.getElementById('trivia-result');
+      
+      questionElem.textContent = trivia.question;
+      optionsElem.innerHTML = '';
+      trivia.options.forEach(option => {
+        const li = document.createElement('li');
+        li.textContent = option;
+        li.onclick = function() {
+          if (option === trivia.answer) {
+            resultElem.textContent = 'Correct!';
+            resultElem.style.color = 'green';
+          } else {
+            resultElem.textContent = 'Wrong! Try again.';
+            resultElem.style.color = 'red';
+          }
+        };
+        optionsElem.appendChild(li);
+      });
+    }
+
+    // Word Search
+    function startWordSearch() {
+      const words = ['apple', 'banana', 'cherry', 'date', 'elderberry'];
+      const wordSearchGrid = [
+        ['a', 'b', 'c', 'd', 'e'],
+        ['b', 'a', 'n', 'a', 'n'],
+        ['c', 'h', 'e', 'r', 'r'],
+        ['d', 'e', 'l', 'b', 'e'],
+        ['e', 'r', 'r', 'y', 'l'],
+      ];
+      
+      const resultElem = document.getElementById('word-search-result');
+      resultElem.textContent = 'Find the words: ' + words.join(', ') + '.';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Progress</title>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #9b0682;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+.progress-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    margin-top: 10px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #06900b;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.lesson-details, .next-steps {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+footer {
+    background-color: #9b0682;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.student-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.progress {
+    margin-top: 20px;
+}
+
+.subject {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.progresss-bar {
+    width: 70%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-value {
+    height: 20px;
+    background-color: #4caf50;
+    text-align: right;
+    color: #fff;
+    padding-right: 5px;
+    border-radius: 8px 0 0 8px;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Course Progress Tracker</h1>
+    </header>
+
+    <main>
+        <section class="progress-section">
+            <h2>Course: Web Development 101</h2>
+            <p>Your progress in this course:</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 60%;"></div>
+            </div>
+            <p class="progress-text">60% Complete</p>
+        </section>
+
+        <section class="lesson-details">
+            <h3>Lessons Completed:</h3>
+            <ul>
+                <li>Introduction to HTML</li>
+                <li>CSS Basics</li>
+                <li>Responsive Design</li>
+            </ul>
+        </section>
+
+        <section class="next-steps">
+            <h3>Next Steps:</h3>
+            <ul>
+                <li>JavaScript Basics</li>
+                <li>Advanced CSS</li>
+            </ul>
+        </section>
+        <br>
+
+        <section>
+            <h3>Subjects Covered:</h3>
+            <div class="subject">
+                <span>Mathematics</span>
+                <div class="progresss-bar">
+                    <div class="progress-value" style="width: 80%;"></div>
+                </div>
+                <span>80%</span>
+            </div>
+            <div class="subject">
+                <span>Science</span>
+                <div class="progresss-bar">
+                    <div class="progress-value" style="width: 70%;"></div>
+                </div>
+                <span>70%</span>
+            </div>
+            <div class="subject">
+                <span>English</span>
+                <div class="progresss-bar">
+                    <div class="progress-value" style="width: 90%;"></div>
+                </div>
+                <span>90%</span>
+            </div>
+            <div class="subject">
+                <span>History</span>
+                <div class="progresss-bar">
+                    <div class="progress-value" style="width: 60%;"></div>
+                </div>
+                <span>60%</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Anu Priya</p>
+    </footer>
+</body>
+</html>
