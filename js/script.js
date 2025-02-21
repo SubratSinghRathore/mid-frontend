@@ -29,10 +29,10 @@ toggleBtn.onclick = (e) =>{
 
 let profile = document.querySelector('.header .flex .profile');
 
-document.querySelector('#user-btn').onclick = () =>{
-   profile.classList.toggle('active');
-   search.classList.remove('active');
-}
+// document.querySelector('#user-btn').onclick = () =>{
+//    profile.classList.toggle('active');
+//    search.classList.remove('active');
+// }
 
 let search = document.querySelector('.header .flex .search-form');
 
@@ -63,3 +63,61 @@ window.onscroll = () =>{
    }
 }
 
+// function login() {
+//    const email = document.getElementById("email").value
+//    const pass = document.getElementById("pass").value
+
+   
+//       const url = "https://student-backend-inw1.onrender.com/login";
+      
+//       const requestData = {
+//           method: "POST",
+//           headers: {
+//               "Content-Type": "application/json"
+//           },
+//           body: JSON.stringify({ email, pass })
+//       };
+  
+//       fetch(url, requestData)
+//           .then(response => {
+//               if (!response.ok) {
+//                   throw new Error(`HTTP error! Status: ${response.status}`);
+//               }
+//               return response.json();
+//           })
+//           .then(data => console.log(data))
+//           .catch(error => {
+//               console.error("Error logging in:", error);
+//               return { error: error.message };
+//           });
+  
+
+// }
+
+async function login() {
+   const email = document.getElementById("email").value;
+   const pass = document.getElementById("pass").value;
+   await fetch(`https://student-backend-inw1.onrender.com/login?email=${email}&&pass=${pass}`, {
+       method: "GET",
+       headers: { 'Content-type': 'application/json' }
+   })
+       .then(res => {
+           return res.json();
+       })
+       .then(res => {
+           localStorage.setItem('username', res.username)
+       })
+}
+
+
+
+   (function () {
+      var user = localStorage.getItem('username');
+      console.log(user);
+
+      
+
+
+   })();
+   const username_local = document.getElementById("user")
+   username_local.textContent = "Aman";

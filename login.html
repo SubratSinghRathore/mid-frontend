@@ -15,6 +15,8 @@
 </head>
 <body>
 
+
+   
 <header class="header">
    
    <section class="flex">
@@ -35,7 +37,7 @@
 
       <div class="profile">
          <img src="https://img.freepik.com/premium-vector/student-girl-illustration-cartoon-icon_592929-13.jpg" class="image" alt="">
-         <h3 class="name">Anu Priya</h3>
+         <h3 class="name" id="user">user</h3>
          <p class="role">student</p>
          <a href="profile.html" class="btn">view profile</a>
          <div class="flex-btn">
@@ -58,7 +60,7 @@
 
    <div class="profile">
       <img src="https://img.freepik.com/premium-vector/student-girl-illustration-cartoon-icon_592929-13.jpg" class="image" alt="">
-      <h3 class="name">user</h3>
+      <h3 class="name"></h3>
       <p class="role">student</p>
       <a href="register.html" class="btn">Sign up</a>
    </div>
@@ -84,7 +86,7 @@
                <input type="email" name="email" placeholder="enter your email" required maxlength="50" class="box" id="email">
                <p>your password <span>*</span></p>
                <input type="password" name="pass" placeholder="enter your password" required maxlength="20" class="box" id="pass">
-               <input type="submit" value="login new" name="submit" class="btn">
+               <input type="button" value="login new" name="submit" class="btn" onclick="login()">
             </form>
    </td>
 </tr>
@@ -106,6 +108,14 @@
 </table>
 </section>
 
+
+<div class="hide" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center;">
+   <h2>User Created Successfully!</h2>
+   <p>Please log in again with your credentials.</p>
+   <a href="https://student-learning-platform-1uoa.vercel.app/" style="display: inline-block; margin-top: 20px; padding: 10px 20px; font-size: 16px; color: white; background: #007BFF; text-decoration: none; border-radius: 5px;">Go to Login</a>
+</div>
+
+
 </section>
 <footer class="footer">
 
@@ -115,6 +125,7 @@
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
+
 
    
 </body>
