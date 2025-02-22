@@ -93,23 +93,29 @@ window.onscroll = () =>{
   
 
 // }
-
 async function login() {
    const email = document.getElementById("email").value;
    const pass = document.getElementById("pass").value;
-   await fetch(`https://student-backend-inw1.onrender.com/login?email=${email}&&pass=${pass}`, {
-       method: "GET",
-       headers: { 'Content-type': 'application/json' }
-   })
-       .then(res => {
-         if(res.ok) {
-            document.getElementById("login_div").classList.remove("hide");
-         }
-       })
-       .then(res => {
-           return res.json();
-       })
-       .then(res => {
-           localStorage.setItem('username', res.username)
-       })
+
+   try {
+       const response = await fetch(`https://student-backend-inw1.onrender.com/login?email=${email}&&pass=${pass}`, {
+           method: "GET",
+           headers: { 'Content-Type': 'application/json' }
+       });
+
+       console.log("Response received:", response);
+
+       if (!response.ok) {
+           throw new Error(`HTTP error! Status: ${response.status}`);
+       }
+
+       const data = await response.json(); // Properly await JSON response
+       console.log("Parsed JSON:", data);
+
+       localStorage.setItem('username', data.username);
+       document.getElementById("login_div").classList.remove("hide");
+
+   } catch (error) {
+       console.error("Error during login:", error);
+   }
 }
